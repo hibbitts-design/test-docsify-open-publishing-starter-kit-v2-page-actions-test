@@ -164,6 +164,19 @@
         title: '',
       },
 
+      pageActionItems: [
+          {
+            icon: '🔗', // HTML string, SVG, or <img>
+            label: 'Custom link',
+            desc: 'Description goes here',
+            action: 'custom', // or 'llm' | 'view' | 'copy'
+            llm: 'claude', // 'perplexity' | 'chatgpt' (if action is 'llm')
+            onClick: ({ rawMarkdown, blobUrl, vm }) => {
+                // Custom handler logic
+            },
+          },
+      ],
+
       // CUSTOM PLUGINS
       // -----------------------------------------------------------------
       plugins: [
@@ -408,6 +421,9 @@
       document.write('<script src="https://cdn.jsdelivr.net/npm/docsify-toc@1.1.0/dist/toc.min.js"><\/script>');
     }
   </script>
+
+  <!-- Page actions plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-page-actions-menu"></script>
 
   <!-- Additional Languages for Prismjs -->
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
